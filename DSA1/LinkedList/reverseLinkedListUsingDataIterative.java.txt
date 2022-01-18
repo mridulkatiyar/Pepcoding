@@ -1,0 +1,15 @@
+public void swap(Node left,Node right){
+      int temp=left.data;
+      left.data=right.data;
+      right.data=temp;
+    }
+
+    public void reverseDI() {
+      // write your code here
+      int left=0,right=size-1;
+
+      while(left<=right){
+       swap(getAt(left),getAt(right));
+       left++;right--;
+      }
+    }

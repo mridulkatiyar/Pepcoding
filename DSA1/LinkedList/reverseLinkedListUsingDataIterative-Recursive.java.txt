@@ -1,0 +1,37 @@
+//1. We can return right because in stack the return is local member and it lost its value, So after returning right the value so it make changes
+// public void ReverseDR(){
+// 	Node left= head , right =head;
+
+// 	reverseDR(left,right,0);
+// }
+
+// public Node reverseDR(Node left, Node right, int counter){
+// 	if(left==null) return right;
+	
+// 	right=reverseDR(left.next,right,counter+1);
+
+// 	if(counter>=size/2) swap(left,right);
+
+// 	right=right.next;
+// 	return right;
+// }
+
+//2. We can use make right as a global variable
+
+ Node right=head
+
+ public void ReverseDR(){
+ 	Node left= head;
+ 	reverseDR(left,right,0);
+ }
+
+ public void reverseDR(Node left, int counter){
+ 	if(left==null) return;
+	
+ 	reverseDR(left.next,counter+1);
+
+ 	if(counter>=size/2) swap(left,right);
+
+ 	right=right.next;
+ 	return;
+ }
