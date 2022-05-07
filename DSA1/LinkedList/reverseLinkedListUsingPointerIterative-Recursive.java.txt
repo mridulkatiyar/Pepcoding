@@ -1,0 +1,30 @@
+private void reversePRHelper(Node node){
+      // write your code here
+
+      if(node==null || node.next==null){
+        return;
+        //if tail is not given save tail from here in a global variable or in static variable 
+        //so we can swap head from that tail variable
+      }
+
+      reversePRHelper(node.next);
+
+      node.next.next=node;
+    }
+
+    public void reversePR(){
+      // write your code here
+      Node curr=head;
+      reversePRHelper(curr);
+
+      //swap head and tail
+
+      Node temp=head;
+      head=tail;
+      tail=temp;
+
+      //make tails node next as well
+
+      tail.next=null;
+    }
+  }
